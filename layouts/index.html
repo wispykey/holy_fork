@@ -2,8 +2,6 @@
 <div class="d:flex flex:col">
     {{- partial "prose.html" . -}}
 
-    <h2 class="my:1em">Posts</h2>
-
     {{- range where site.RegularPages "Type" "in" site.Params.mainSections -}}
 
     {{- partial "li.html" ( dict "url" .Permalink "title" .Title "subTitle" (.Date | time.Format ("Jan 2006")) "thumbnail" (.Params.thumbnail) "thumbnailWidth" (.Params.thumbnailWidth) "description" (.Params.description)) -}}
